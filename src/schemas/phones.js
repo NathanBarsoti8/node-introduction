@@ -5,7 +5,8 @@ class Phones extends Model {
         super.init({
             ddd: DataTypes.STRING,
             phone: DataTypes.STRING,
-            customerId: DataTypes.INTEGER
+            customerId: DataTypes.INTEGER,
+            isActive: DataTypes.BOOLEAN
         }, {
             sequelize
         })
