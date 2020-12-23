@@ -1,5 +1,5 @@
 const Customers = require('../../schemas/customers');
-const Sequelize = require('sequelize');
+const createPhone = require('../phones/create').create;
 
 module.exports = async (req, res) => {
 
@@ -7,6 +7,10 @@ module.exports = async (req, res) => {
 
     Customers.create(req.body).then(customer => {
         if (customer) {
+
+            if (req.body.phones && req.body.phones.length) 
+                createPhone(req.body.phones, customer.id)
+
             return res.status(201).json({ message: 'customer created' })
         }
     }).catch(err => {
