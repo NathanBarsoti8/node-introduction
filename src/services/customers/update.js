@@ -11,10 +11,7 @@ module.exports = async (req, res) => {
             id: req.params.id
         }
     }).then(customer => {
-
         if (customer) {
-            
-
             if (req.body.phones && req.body.phones.length) 
                 updatePhone(req.body.phones, req.params.id)
 
