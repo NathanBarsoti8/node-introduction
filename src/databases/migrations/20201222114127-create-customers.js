@@ -5,7 +5,7 @@ module.exports = {
 
 		return Promise.all([
 
-			await queryInterface.createTable('customers', {
+			await queryInterface.createTable('Customers', {
 				id: {
 					type: Sequelize.INTEGER,
 					primaryKey: true,
@@ -31,7 +31,7 @@ module.exports = {
 				}
 			}),
 
-			await queryInterface.createTable('phones', {
+			await queryInterface.createTable('Phones', {
 				id: {
 					type: Sequelize.INTEGER,
 					primaryKey: true,
@@ -50,7 +50,7 @@ module.exports = {
 					type: Sequelize.INTEGER,
 					allowNull: false,
 					refereces: {
-						model: 'customers',
+						model: 'Customers',
 						key: 'id'
 					}
 				},
@@ -70,8 +70,8 @@ module.exports = {
 
 	down: async (queryInterface, Sequelize) => {
 		return Promise.all([
-			await queryInterface.dropTable('phones'),
-			await queryInterface.dropTable('customers')
+			await queryInterface.dropTable('Phones'),
+			await queryInterface.dropTable('Customers')
 		])
 	}
 };
