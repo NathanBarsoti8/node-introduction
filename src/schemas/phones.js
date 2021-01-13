@@ -8,7 +8,8 @@ class Phones extends Model {
             customerId: DataTypes.INTEGER,
             isActive: DataTypes.BOOLEAN
         }, {
-            sequelize
+            sequelize,
+            freezeTableName: true
         })
     }
 

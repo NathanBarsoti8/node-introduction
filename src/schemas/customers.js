@@ -6,7 +6,8 @@ class Customers extends Model {
             name: DataTypes.STRING,
             isActive: DataTypes.BOOLEAN
         }, {
-            sequelize
+            sequelize,
+            freezeTableName: true
         })
     }
 
